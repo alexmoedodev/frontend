@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LogoTipo from "../../../../public/defaultImage.jpg";
+import LogoTipo from "../../../../public/Logotipo.png";
 
 import styles from "./ImageLogo.module.css";
 

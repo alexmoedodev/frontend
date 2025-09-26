@@ -38,10 +38,10 @@ export function Promotion() {
 
               <div className={styles.banner}>
             <div className={styles.details}>
-              <label>Get 30% off</label>
+              <label>Get 15% off</label>
               <h2>
-                Whicker Hanging <br />
-                Chairs
+                Brasslegged<br />
+                Armchair
               </h2>
               <Button variant="yellow" size="w-fit">
                 By Now

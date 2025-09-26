@@ -20,20 +20,18 @@ export function WhyChoose() {
             </div>
           </div>
 
-
           {/*
            * **********APAGAR************
            * aqui os dados viram do banco
            */}
-
 
           <div className={styles.services}>
             <div>
               <FaCreditCard className={styles.icons} />
             </div>
             <div className={styles.details}>
-              <label htmlFor="">Free Delivery</label>
-              <span>Free shipping on all order</span>
+              <label htmlFor="">Money Return</label>
+              <span>Back guarantee under 7 day</span>
             </div>
           </div>
 
@@ -42,8 +40,8 @@ export function WhyChoose() {
               <MdOutlineSupportAgent className={styles.icons} />
             </div>
             <div className={styles.details}>
-              <label htmlFor="">Free Delivery</label>
-              <span>Free shipping on all order</span>
+              <label htmlFor="">Online Support</label>
+              <span>Suppot online 24 hours a day</span>
             </div>
           </div>
 
@@ -52,8 +50,8 @@ export function WhyChoose() {
               <VscWorkspaceTrusted className={styles.icons} />
             </div>
             <div className={styles.details}>
-              <label htmlFor="">Free Delivery</label>
-              <span>Free shipping on all order</span>
+              <label htmlFor="">Reliable</label>
+              <span>Trusted by 1000+ brands</span>
             </div>
           </div>
         </div>
