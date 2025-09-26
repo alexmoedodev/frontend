@@ -5,7 +5,7 @@ import { WhyChoose } from "@/components/layouts/WhyChoose";
 import { TopSale } from "@/components/layouts/TopSale";
 import { HotDealFurniture } from "@/components/layouts/HotDealFurniture";
 
-export function Home() {
+export default function Home() {
   return (
     <>
       <Header />
