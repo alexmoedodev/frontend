@@ -1,0 +1,20 @@
+import { Header } from "@/components/layouts/Header";
+import { Hero } from "@/components/layouts/Hero";
+import { Promotion } from "@/components/layouts/Promotion";
+import { WhyChoose } from "@/components/layouts/WhyChoose";
+import { TopSale } from "@/components/layouts/TopSale";
+import { HotDealFurniture } from "@/components/layouts/HotDealFurniture";
+
+export function Home() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <WhyChoose />
+      <Promotion />
+      <TopSale />
+
+      <HotDealFurniture />
+    </>
+  );
+}

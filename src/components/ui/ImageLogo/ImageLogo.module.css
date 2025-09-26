@@ -1,0 +1,7 @@
+.containerImage {
+    display: flex;
+    padding: 8px;
+    width: 120px;
+    height: auto;
+}
+
