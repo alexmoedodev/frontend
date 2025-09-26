@@ -5,13 +5,13 @@ import styles from "./Button.module.css";
 type ButtonProps = {
   children: React.ReactNode;
   variant: "yellow" | "white";
-  size: "w-fit" | ""
+  size?: "w-fit" | "w-full";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
   children,
   variant,
-  size,
+  size = "w-fit",
   className,
   ...props
 }: ButtonProps) {
