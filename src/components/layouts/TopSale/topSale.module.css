@@ -87,7 +87,7 @@
 
 .avaliation {
     display: flex;
-    color: rgb(201, 201, 24);
+    color: var(--color-stars);
     gap: 3px;
 }
 

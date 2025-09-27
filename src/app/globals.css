@@ -12,10 +12,12 @@
   --color-white: #ffffff;
   --color-accent: #b08b5d;
   --color-gray: #5e5e5e;
+  --color-gray-secondary: #444545;
   --color-secondary: #d3bfa6;
   --color-primary: #f5f1e6;
   --color-ice: #c2f2ff;
   --color-black: #000000;
+  --color-stars: rgb(201, 201, 24);
 
 }
 

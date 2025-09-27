@@ -75,7 +75,7 @@
     gap: 10px;
     color: var(--color-gray);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
 
 }
 
@@ -122,11 +122,12 @@
     }
 
     .testimony {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        gap: 5px;
     }
 
     .details h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .containerImage {
@@ -134,3 +135,4 @@
         height: 250px;
     }
 }
+
