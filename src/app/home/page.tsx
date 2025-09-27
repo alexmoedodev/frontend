@@ -6,18 +6,20 @@ import { TopSale } from "@/components/layouts/TopSale";
 import { HotDealFurniture } from "@/components/layouts/HotDealFurniture";
 import { ReadBlog } from "@/components/layouts/ReadBlog";
 import { Testimonials } from "@/components/layouts/Testimonials";
+import { TrendyCollection } from "@/components/layouts/TrendyCollection";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
+      {/* <Hero />
       <WhyChoose />
       <Promotion />
       <TopSale />
       <HotDealFurniture />
       <Testimonials />
-      <ReadBlog />
+      <ReadBlog /> */}
+      <TrendyCollection />
     </>
   );
 }
