@@ -7,7 +7,9 @@ export type ProductsProps = {
   name: string;
   stars: React.ReactNode;
   price: string;
+  filters: "All" | "New In" | "Top Rated" | "Tensing Items" 
   img: string;
+  off: string | null | undefined
 };
 
 export const products: ProductsProps[] = [
@@ -24,7 +26,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 150,00",
-    img: "/defaultProduct1.jpg",
+    off: "10% OFF",
+    filters:"New In" ,
+    img: "/defaultProduct1.png",
   },
   /* 02 */
   {
@@ -39,7 +43,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 190,00",
-    img: "/defaultProduct2.jpg",
+    off: "10% OFF",
+    filters:"New In" ,
+    img: "/defaultProduct2.png",
   },
   /* 03 */
   {
@@ -54,7 +60,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 300,00",
-    img: "/defaultProduct3.jpg",
+    off: "15% OFF",
+    filters:"New In" ,
+    img: "/defaultProduct3.png",
   },
   /* 04 */
   {
@@ -69,7 +77,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 129,00",
-    img: "/defaultProduct4.jpg",
+    off: null,
+    filters: "Top Rated",
+    img: "/defaultProduct4.png",
   },
   /* 05 */
   {
@@ -84,7 +94,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 150,00",
-    img: "/defaultProduct5.jpg",
+    off: null,
+    filters: "Top Rated" ,
+    img: "/defaultProduct5.png",
   },
   /* 06 */
   {
@@ -99,7 +111,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 150,00",
-    img: "/defaultProduct6.jpg",
+    off: "7% OFF",
+    filters: "Tensing Items",
+    img: "/defaultProduct6.png",
   },
   /* 07 */
   {
@@ -114,7 +128,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 80,00",
-    img: "/defaultProduct7.jpg",
+    off: null,
+    filters: "Tensing Items",
+    img: "/defaultProduct7.png",
   },
   /* 08 */
   {
@@ -129,6 +145,9 @@ export const products: ProductsProps[] = [
       </>
     ),
     price: "R$ 49,00",
-    img: "/defaultProduct8.jpg",
+    off: "50% OFF",
+    filters: "Tensing Items",
+    img: "/defaultProduct8.png",
+
   },
 ];

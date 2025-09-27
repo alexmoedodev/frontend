@@ -1,10 +1,36 @@
+"use client"
+
 import Image from "next/image";
-import Link from "next/link";
-import { FaStar } from "react-icons/fa";
-import ImageProduct from "../../../../public/defaultProduct1.png";
 import styles from "./trendyCollection.module.css";
+import { products, ProductsProps } from "@/services/products";
+import { useState } from "react";
+
 
 export function TrendyCollection() {
+  const [filtersProducts, setFiltersProducts] = useState<ProductsProps[]>(products)
+
+
+  function handleProductsOff() {
+    const off = products.filter((item) => item.off)
+    if (off) {
+      setFiltersProducts(off)
+    }
+  }
+
+
+  function handleFilters(filters: ProductsProps["filters"]) {
+    if (filters === "All") {
+      setFiltersProducts(products)
+    }
+    else {
+      setFiltersProducts(products.filter((item) => item.filters === filters))
+    }
+
+  }
+
+
+
+
   return (
     <>
       <section className={styles.container}>
@@ -12,46 +38,65 @@ export function TrendyCollection() {
           <div>
             <label>This month</label>
             <h1>Trendy Collection</h1>
+
+            <p>All filtered products: {filtersProducts.length}</p>
           </div>
 
           <nav>
             <ul>
               <li>
-                <Link href={""}>All Collection</Link>
+                <button onClick={() => handleFilters("All")}>All Collection</button>
               </li>
               <li>
-                <Link href={""}>New In</Link>
+                <button onClick={() => handleFilters("New In")}>New In</button>
               </li>
               <li>
-                <Link href={""}>Top Rated</Link>
+                <button onClick={() => handleFilters("Top Rated")}>Top Rated</button>
               </li>
               <li>
-                <Link href={""}>Tensing Items</Link>
+                <button onClick={() => handleFilters("Tensing Items")}>Tensing Items</button>
+              </li>
+              <li>
+                <button onClick={handleProductsOff}>Products off</button>
               </li>
             </ul>
           </nav>
         </div>
 
+
+
         <div className={styles.content}>
-          <div className={styles.product}>
-            <div className={styles.imageProduct}>
-              <Image src={ImageProduct} alt="Foto do produto" />
-            </div>
-            <div className={styles.off}>
-              <span>10% OFF</span>
-            </div>
-            <div className={styles.detailsProduct}>
-              <label>Stylish Grey Chair</label>
-              <div className={styles.stars}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
+
+          {filtersProducts.map((item, index) => (
+            <div className={styles.product} key={index}>
+              <div className={styles.imageProduct}>
+                <Image
+                  src={item.img}
+                  alt="Foto do produto"
+                  width={150}
+                  height={150}
+                  priority
+                  title={item.name}
+
+                />
               </div>
-              <span>R$ 150,00</span>
-            </div>
-          </div>
+
+              {filtersProducts && item.off && (
+                <div className={styles.off}>
+                  <span>{item.off}</span>
+                </div>
+              )}
+
+
+              <div className={styles.detailsProduct}>
+                <label>{item.name}</label>
+                <div className={styles.stars}>
+                  {item.stars}
+                </div>
+                <span>{item.price}</span>
+              </div>
+            </div >
+          ))}
         </div>
       </section>
     </>
