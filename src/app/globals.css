@@ -18,10 +18,17 @@
   --color-ice: #c2f2ff;
   --color-black: #000000;
   --color-stars: rgb(201, 201, 24);
+  --color-violet: #6d63ff;
+  --color-violet-secondary: #5a50e6;
+
 
 }
 
-body{
+body {
   width: 100dvw;
   overflow-y: none;
+}
+
+a {
+  text-decoration: none;
 }

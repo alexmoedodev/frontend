@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 
 type ButtonProps = {
   children: React.ReactNode;
-  variant: "yellow" | "white";
+  variant: "yellow" | "white" | "violet"
   size?: "w-fit" | "w-full";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
