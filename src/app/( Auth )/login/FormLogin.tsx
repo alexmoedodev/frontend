@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button/Button";
 import Input from "@/components/ui/Input/Input";
 
 //🎨 Styles
-import styles from "./formLogin.module.css";
-import ImageLoginBg from "../../../public/login.png";
-import LogoTipo from "../../../public/Logotipo.png";
+import styles from "../styles.module.css";
+import ImageLoginBg from "../../../../public/login.png";
+import LogoTipo from "../../../../public/Logotipo.png";
 
 //📋 typagem
 type FormLoginProps = {
@@ -27,7 +27,6 @@ export function FormLogin() {
     password: "",
     remmember: false
   })
-  console.log("Checkbox:", user.remmember)
 
   return (
     <>
@@ -52,6 +51,7 @@ export function FormLogin() {
                   sizeStyles="w-full"
                   title="Preencha email cadastrado."
                   placeholder="email@email.com"
+                  required
                   type="email"
                   name="email"
                   value={user.email}
@@ -62,6 +62,7 @@ export function FormLogin() {
                   sizeStyles="w-full"
                   title="Preencha sua senha."
                   placeholder="******"
+                  required
                   type="password"
                   name="password"
                   value={user.password}
@@ -86,7 +87,7 @@ export function FormLogin() {
                   </div>
                   <div className={styles.forgot_password}>
                     <Link
-                      href={"/"}
+                      href={"/redefinir-senha"}
                       title="Click para redefinir uma nova senha."
                     >
                       Esqueceu senha?
@@ -99,7 +100,7 @@ export function FormLogin() {
               </div>
               <div className={styles.footer__form}>
                 <label>Não possui uma conta?</label>
-                <Link href={"/"} title="Click aqui e registre uma conta.">
+                <Link href={"/registrar-se"} title="Click aqui e registre uma conta.">
                   Registrar-se
                 </Link>
               </div>
