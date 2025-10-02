@@ -1,4 +1,4 @@
-import Layuot from "../components/layout/index";
+import Layuot from "../components/Layout/index";
 
 export function FormCompany() {
   return (
