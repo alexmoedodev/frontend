@@ -9,7 +9,7 @@ type LayuotProps = {
     
 }
 
-export function Layuot({ children  }: LayuotProps) {
+export default function Layuot({ children  }: LayuotProps) {
 
     const nameCompany = process.env.NEXT_PUBLIC_NAME_COMPANY
     const year = new Date().getFullYear()
