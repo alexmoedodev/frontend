@@ -1,4 +1,4 @@
-import { Layuot } from "../components/layout"
+import  Layuot  from "../components/layout"
 
 
 export function FormCompany(){
