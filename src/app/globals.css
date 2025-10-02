@@ -2,9 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
-
 
 :root {
   --color-background: #f5f3ed;
@@ -17,16 +15,19 @@
   --color-primary: #f5f1e6;
   --color-ice: #c2f2ff;
   --color-black: #000000;
-  --color-stars: rgb(201, 201, 24);
+  --color-stars: #c9c918;
   --color-violet: #6d63ff;
   --color-violet-secondary: #5a50e6;
-
-
+  --color-border: #cfcfcf61;
+  --color-box-shandow: 0 0 0.9rem #bcbcbc;
+  --color-bg-body: #f6f6f6;
 }
 
 body {
-  width: 100dvw;
-  overflow-y: none;
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: var(--color-bg-body)
 }
 
 a {
