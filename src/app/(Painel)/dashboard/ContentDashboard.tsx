@@ -1,4 +1,4 @@
-import  Layuot  from "@/app/( Painel )/components/Layout/index";
+import  Layuot  from "@/app/(Painel)/components/Layout/index";
 
 export function ContentDashboard() {
     return (

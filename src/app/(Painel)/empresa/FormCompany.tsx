@@ -3,7 +3,7 @@ import { useState } from "react";
 import { DocumentForm } from "../components/Form/DocumentForm";
 import { AddressForm } from "../components/Form/AddressForm";
 import { ContactForm } from "../components/Form/ContactForm";
-import  Layuot  from "@/app/( Painel )/components/Layout/index";
+import  Layuot  from "@/app/(Painel)/components/Layout/index";
 import { TitlePage } from "../components/TitlePage";
 import { ButtonsFooterActions } from "../components/ButtonsFooterAction";
 
