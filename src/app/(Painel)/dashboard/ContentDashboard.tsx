@@ -1,9 +1,9 @@
-import  Layuot  from "@/app/(Painel)/components/Layout/index";
+import LayuotMain from "../components/LayoutMain"
 
 export function ContentDashboard() {
     return (
-        <Layuot>
+        <LayuotMain>
             <h1>Olá main</h1>
-        </Layuot>
+        </LayuotMain>
     )
 }

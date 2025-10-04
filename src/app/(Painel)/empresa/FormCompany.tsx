@@ -3,7 +3,7 @@ import { useState } from "react";
 import { DocumentForm } from "../components/Form/DocumentForm";
 import { AddressForm } from "../components/Form/AddressForm";
 import { ContactForm } from "../components/Form/ContactForm";
-import  Layuot  from "@/app/(Painel)/components/Layout/index";
+import LayuotMain from "../components/LayoutMain";
 import { TitlePage } from "../components/TitlePage";
 import { ButtonsFooterActions } from "../components/ButtonsFooterAction";
 
@@ -74,7 +74,7 @@ export function FormCompany() {
 
   return (
     <>
-      <Layuot>
+      <LayuotMain>
         <TitlePage titlePage="EMPRESA" label={true} />
         <form>
           <DocumentForm
@@ -111,7 +111,7 @@ export function FormCompany() {
             href="/dashboard"
           />
         </form>
-      </Layuot>
+      </LayuotMain>
     </>
   );
 }
