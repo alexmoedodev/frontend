@@ -1,24 +1,116 @@
+"use client";
+import { useState } from "react";
+import { DocumentForm } from "../components/Form/DocumentForm";
+import { AddressForm } from "../components/Form/AddressForm";
+import { ContactForm } from "../components/Form/ContactForm";
 import Layuot from "../components/Layout/index";
+import { TitlePage } from "../components/TitlePage";
+import { ButtonsFooterActions } from "../components/ButtonsFooterAction";
+
+type DocumentFormData = {
+  documentType: "CPF" | "CNPJ";
+  document: string;
+  ieORrg: string;
+  socialRasion: string;
+  nameFantasy: string;
+};
+
+type AddressFormData = {
+  cep: string;
+  address: string;
+  number: string;
+  complement: string;
+  neighborhood: string;
+  city: string;
+  uf: string;
+};
+
+type ContactFormData = {
+  phone: string;
+  phone2: string;
+  email: string;
+  site: string;
+  whatsApp: string;
+  instagran: string;
+  facebook: string;
+};
+
+type FormData = {
+  document: DocumentFormData;
+  address: AddressFormData;
+  contact: ContactFormData;
+};
 
 export function FormCompany() {
+  const [formData, setFormData] = useState<FormData>({
+    document: {
+      documentType: "CNPJ",
+      document: "",
+      ieORrg: "",
+      socialRasion: "",
+      nameFantasy: "",
+    },
+
+    address: {
+      cep: "",
+      address: "",
+      number: "",
+      complement: "",
+      neighborhood: "",
+      city: "",
+      uf: "",
+    },
+
+    contact: {
+      phone: "",
+      phone2: "",
+      email: "",
+      site: "",
+      whatsApp: "",
+      instagran: "",
+      facebook: "",
+    },
+  });
+
   return (
     <>
       <Layuot>
-        <div>
-          <h1>Lorem, ipsum.</h1>
+        <TitlePage titlePage="EMPRESA" label={true} />
+        <form>
+          <DocumentForm
+            data={formData.document}
+            onChange={(newData) =>
+              setFormData((prev) => ({
+                ...prev,
+                document: { ...prev.document, ...newData },
+              }))
+            }
+          />
+          <AddressForm
+            data={formData.address}
+            onChange={(newData) =>
+              setFormData((prev) => ({
+                ...prev,
+                address: { ...prev.address, ...newData },
+              }))
+            }
+          />
+          <ContactForm
+            data={formData.contact}
+            onChange={(newData) =>
+              setFormData((prev) => ({
+                ...prev,
+                contact: { ...prev.contact, ...newData },
+              }))
+            }
+          />
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eius
-            qui natus nulla saepe rem debitis ut. Veritatis laboriosam eveniet
-            quidem. Pariatur incidunt quia hic aspernatur, aut debitis et error
-            saepe omnis laudantium rem adipisci commodi placeat repellendus
-            corrupti, iste nostrum rerum consequatur eos. Nostrum ad illum
-            sapiente tenetur temporibus, aliquam provident eaque laudantium
-            officiis. Rem quis, odio excepturi sint quaerat ad optio cum minima
-            corrupti eaque facilis voluptatibus, cupiditate assumenda sunt
-            facere beatae accusamus! Totam incidunt unde ipsam aperiam a sunt .
-          </p>
-        </div>
+          <ButtonsFooterActions
+            titleButtonSave="Empresa"
+            titleButtonLinkCancel="e voltar"
+            href="/dashboard"
+          />
+        </form>
       </Layuot>
     </>
   );

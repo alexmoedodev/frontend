@@ -1,12 +1,12 @@
-import { Header } from "@/components/layouts/Header";
-import { Hero } from "@/components/layouts/Hero";
-import { Promotion } from "@/components/layouts/Promotion";
-import { WhyChoose } from "@/components/layouts/WhyChoose";
-import { TopSale } from "@/components/layouts/TopSale";
-import { HotDealFurniture } from "@/components/layouts/HotDealFurniture";
-import { ReadBlog } from "@/components/layouts/ReadBlog";
-import { Testimonials } from "@/components/layouts/Testimonials";
-import { TrendyCollection } from "@/components/layouts/TrendyCollection";
+import { Header } from "@/app/home/components/layouts/Header";
+import { Hero } from "@/app/home/components/layouts/Hero";
+import { Promotion } from "@/app/home/components/layouts/Promotion";
+import { WhyChoose } from "@/app/home/components/layouts/WhyChoose";
+import { TopSale } from "@/app/home/components/layouts/TopSale";
+import { HotDealFurniture } from "@/app/home/components/layouts/HotDealFurniture";
+import { ReadBlog } from "@/app/home/components/layouts/ReadBlog";
+import { Testimonials } from "@/app/home/components/layouts/Testimonials";
+import { TrendyCollection } from "@/app/home/components/layouts/TrendyCollection";
 
 export default function Home() {
   return (

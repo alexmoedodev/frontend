@@ -3,39 +3,60 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 6px 12px;
+    padding: 4px 12px;
     border-radius: 4px;
     border: none;
-    height: 40px;
-    min-width: 120px;
-    text-transform: uppercase;
     cursor: pointer;
-    transition: background.5s ease, color 0.5s ease;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
+.button .icon {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
 
 /* ************Colors************** */
-.yellow {
+
+.golden {
+    display: flex;
+    flex-direction: row-reverse;
     background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
     color: var(--color-white);
 }
 
-.yellow:hover {
+.golden:hover {
+    background-color: var(--color-white);
+    color: var(--color-accent);
+
+}
+
+.golden:hover .icon {
+    color: var(--color-accent);
+}
+
+.white {
+    display: flex;
+    flex-direction: row-reverse;
     background-color: var(--color-white);
     color: var(--color-accent);
     border: 1px solid var(--color-accent);
 }
 
-.white {
-    background-color: var(--color-white);
+.white .icon {
     color: var(--color-accent);
-    border: 1px solid var(--color-accent);
 }
 
 .white:hover {
     background-color: var(--color-accent);
     color: var(--color-white);
     border: 1px solid var(--color-accent);
+}
+
+.white:hover .icon {
+    color: var(--color-white);
 }
 
 .violet {
@@ -49,16 +70,51 @@
     background-color: var(--color-violet-secondary);
 }
 
+.success {
+    background-color: var(--color-success);
+    color: var(--color-white);
+    border: 1px solid var(--color-success);
 
+}
+
+.success:hover {
+    background-color: var(--color-success-secondary);
+}
 
 /* **********Sizes******************* */
+/*********** width*********** */
+.w-full {
+    width: 100%;
+}
+
 .w-fit {
     width: fit-content;
 }
 
-.w-full {
-    width: 100%;
+.w-sm {
+    width: 100px;
 }
+
+.w-md {
+    width: 300px;
+}
+
+.w-lg {
+    width: 400px;
+}
+
+/**********height***************/
+.h-sm {
+    height: 25px;
+}
+.h-md {
+    height: 30px;
+}
+.h-lg {
+    height: 40px;
+}
+
+
 
 @media (max-width:516px) {
     .button {

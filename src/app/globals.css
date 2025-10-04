@@ -18,10 +18,14 @@
   --color-stars: #c9c918;
   --color-violet: #6d63ff;
   --color-violet-secondary: #5a50e6;
+  --color-success: #009689;
+  --color-success-secondary: #005f5a;
+  --color-red: red;
   --color-border: #cfcfcf61;
   --color-box-shandow: 0 0 0.9rem #bcbcbc;
   --color-bg-body: #f6f6f6;
 }
+
 
 body {
   width: 100%;
@@ -33,3 +37,26 @@ body {
 a {
   text-decoration: none;
 }
+
+
+.group__fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0px;
+
+}
+
+/* Class -------- .required -----------
+ * Responsavel por add * nos label onde os inputs são campo obrigatório de preenchimento. 
+ * Objetivo é trazer uma experiencia visual para o usuário.
+ */
+.required::after {
+  content: "*";
+  color: var(--color-red);
+  margin-left: 3px;
+
+}
+
+

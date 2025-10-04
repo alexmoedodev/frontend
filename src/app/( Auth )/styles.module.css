@@ -55,6 +55,7 @@
   flex-direction: column;
   padding: 16px;
   gap: 10px;
+  line-height: 1.3;
 }
 
 .title__form img {
@@ -69,13 +70,14 @@
   text-align: center;
 }
 
+
 .input__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
+
+
 
 .remember__forgot_password {
   width: 100%;

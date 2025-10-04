@@ -1,4 +1,4 @@
-"use client"
+"use client";
 //📦 React
 import { useState } from "react";
 import Image from "next/image";
@@ -12,28 +12,33 @@ import Input from "@/components/ui/Input/Input";
 import styles from "../styles.module.css";
 import ImageLoginBg from "../../../../public/login.png";
 import LogoTipo from "../../../../public/Logotipo.png";
+import { TITLE_FIELDS_USER } from "@/utils/formTitles";
+import { TITLE_BUTTON } from "@/utils/buttonTitles";
 
 //📋 typagem
 type FormLoginProps = {
-  email: string
-  password: string
-  remmember: boolean
-}
-
+  email: string;
+  password: string;
+  remmember: boolean;
+};
 
 export function FormLogin() {
   const [user, setUser] = useState<FormLoginProps>({
     email: "",
     password: "",
-    remmember: false
-  })
+    remmember: false,
+  });
 
   return (
     <>
       <div className={styles.login__container}>
         <div className={styles.login__card}>
           <div className={styles.login__image__bg}>
-            <Image src={ImageLoginBg} alt="Imagem de background do card" priority />
+            <Image
+              src={ImageLoginBg}
+              alt="Imagem de background do card"
+              priority
+            />
           </div>
 
           <form action="" className={styles.form__login}>
@@ -48,39 +53,49 @@ export function FormLogin() {
               </div>
               <div className={styles.input__form}>
                 <Input
-                  sizeStyles="w-full"
-                  title="Preencha email cadastrado."
+                  widthStyles="w-full"
+                  heigthStyles="h-md"
+                  title={TITLE_FIELDS_USER.USER_EMAIL}
                   placeholder="email@email.com"
                   required
                   type="email"
                   name="email"
                   value={user.email}
-                  onChange={(e) => setUser((prev) => ({ ...prev, email: e.target.value }))}
-
+                  onChange={(e) =>
+                    setUser((prev) => ({ ...prev, email: e.target.value }))
+                  }
                 />
                 <Input
-                  sizeStyles="w-full"
-                  title="Preencha sua senha."
+                  widthStyles="w-full"
+                  heigthStyles="h-md"
+                  title={TITLE_FIELDS_USER.USER_PASSWORD}
                   placeholder="******"
                   required
                   type="password"
                   name="password"
                   value={user.password}
-                  onChange={(e) => setUser((prev) => ({ ...prev, password: e.target.value }))}
+                  onChange={(e) =>
+                    setUser((prev) => ({ ...prev, password: e.target.value }))
+                  }
                 />
                 <div className={styles.remember__forgot_password}>
                   <div className={styles.remember}>
                     <input
                       type="checkbox"
-                      name="remember"
+                      title={TITLE_FIELDS_USER.REMMEMBER}
                       id="remember"
-                      title="Click para relembrar as credenciais"
+                      name="remember"
                       checked={user.remmember}
-                      onChange={(e) => setUser((prev)=> ({...prev , remmember: e.target.checked}))}
+                      onChange={(e) =>
+                        setUser((prev) => ({
+                          ...prev,
+                          remmember: e.target.checked,
+                        }))
+                      }
                     />
                     <label
                       htmlFor="remember"
-                      title="Click para relembrar as credenciais"
+                      title={TITLE_FIELDS_USER.REMMEMBER}
                     >
                       Lembrar-me
                     </label>
@@ -88,19 +103,27 @@ export function FormLogin() {
                   <div className={styles.forgot_password}>
                     <Link
                       href={"/redefinir-senha"}
-                      title="Click para redefinir uma nova senha."
+                      title={TITLE_FIELDS_USER.FORGOT_PASSWORD}
                     >
                       Esqueceu senha?
                     </Link>
                   </div>
                 </div>
-                <Button type="submit" variant="violet" size="w-full" title="Acessar ao Painel">
+                <Button
+                  type="submit"
+                  variant="violet"
+                  widthStyles="w-full"
+                  heigthStyles="h-md"
+                  title={TITLE_BUTTON.ACCESS}
+                >
                   Acessar
                 </Button>
               </div>
               <div className={styles.footer__form}>
                 <label>Não possui uma conta?</label>
-                <Link href={"/registrar-se"} title="Click aqui e registre uma conta.">
+                <Link 
+                href={"/registrar-se"}
+                title={TITLE_FIELDS_USER.REGISTER}>
                   Registrar-se
                 </Link>
               </div>
