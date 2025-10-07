@@ -7,6 +7,7 @@ import { HotDealFurniture } from "@/app/home/components/layouts/HotDealFurniture
 import { ReadBlog } from "@/app/home/components/layouts/ReadBlog";
 import { Testimonials } from "@/app/home/components/layouts/Testimonials";
 import { TrendyCollection } from "@/app/home/components/layouts/TrendyCollection";
+import { Banner } from "./components/layouts/Banner";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <HotDealFurniture />
       <Testimonials />
       <TrendyCollection />
+      <Banner />
       <ReadBlog />
     </>
   );
