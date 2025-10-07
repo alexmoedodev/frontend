@@ -4,9 +4,10 @@ import Image from "next/image"
 
 import AvatarUser from "../../../../../public/avatar.jpg"
 import styles from "./sidebar.module.css"
-import {  FaHome } from "react-icons/fa"
+import { FaHome } from "react-icons/fa"
 import { IoStorefrontSharp } from "react-icons/io5";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { TfiWorld } from "react-icons/tfi";
 
 
 type SidebarProps = {
@@ -47,8 +48,9 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                     <ul className={styles.ul}>
                         <li className={styles.li}>
                             <Link
-                                href="/"
+                                href="/dashboard"
                                 className={open ? "" : styles.li__close}
+                                title="Navegar para home"
                             >
                                 <FaHome /> <span>Home</span>
 
@@ -58,8 +60,21 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                             <Link
                                 href="/empresa"
                                 className={open ? "" : styles.li__close}
+                                title="Dados da empresa"
                             >
                                 <IoStorefrontSharp /> <span>Empresa</span>
+
+                            </Link>
+                        </li>
+                        <li className={styles.li}>
+                            <Link
+                                href="/"
+                                className={open ? "" : styles.li__close}
+                                title="Abri o site em uma nova aba"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <TfiWorld /> <span>Ver site</span>
 
                             </Link>
                         </li>

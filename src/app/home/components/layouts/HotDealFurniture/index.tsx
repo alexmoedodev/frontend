@@ -1,7 +1,15 @@
+// 📦 React
 import Image from "next/image";
-import defaultLivingRoom from "../../../../../../public/defaultLivingRoom.jpg";
-import styles from "./hotDealFurniture.module.css";
+
+// 🧩 Components
 import { Button } from "@/components/ui/Button/Button";
+
+// Image
+import defaultLivingRoom from "../../../../../../public/defaultLivingRoom.jpg";
+
+// 🎨 Styles
+import styles from "./hotDealFurniture.module.css";
+
 export function HotDealFurniture() {
   return (
     <>

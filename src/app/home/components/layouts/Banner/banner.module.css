@@ -131,9 +131,9 @@
   .container__banner {
     padding: 16px;
   }
-
   .day__timer {
-    padding: 6px;
+    padding: 6px 10px;
+  
   }
   .day__timer span {
     font-size: 2rem;
@@ -147,5 +147,9 @@
 @media (max-width:375px) {
    .content h1 {
     font-size: 1.5rem;
+  }
+  .day__timer {
+    padding: 4px ;
+  
   }
 }

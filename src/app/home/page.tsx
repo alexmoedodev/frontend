@@ -8,11 +8,12 @@ import { ReadBlog } from "@/app/home/components/layouts/ReadBlog";
 import { Testimonials } from "@/app/home/components/layouts/Testimonials";
 import { TrendyCollection } from "@/app/home/components/layouts/TrendyCollection";
 import { Banner } from "./components/layouts/Banner";
+import { Footer } from "./components/layouts/Footer";
 
 export default function Home() {
   return (
     <>
-      <Header />
+     <Header /> 
       <Hero />
       <WhyChoose />
       <Promotion />
@@ -21,7 +22,8 @@ export default function Home() {
       <Testimonials />
       <TrendyCollection />
       <Banner />
-      <ReadBlog />
+      <ReadBlog /> 
+      <Footer />
     </>
   );
 }

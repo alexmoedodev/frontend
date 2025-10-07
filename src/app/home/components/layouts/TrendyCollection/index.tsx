@@ -6,9 +6,8 @@ import { useState } from "react";
 // 🎨 Styles
 import styles from "./trendyCollection.module.css";
 
-// ⚙ Services
+// ⚙️ Services
 import { products, ProductsProps } from "@/services/products";
-
 
 export function TrendyCollection() {
   const [filtersProducts, setFiltersProducts] = useState<ProductsProps[]>(products)
@@ -20,7 +19,6 @@ export function TrendyCollection() {
       setFiltersProducts(off)
     }
   }
-
 
   function handleFilters(filters: ProductsProps["filters"]) {
     if (filters === "All") {

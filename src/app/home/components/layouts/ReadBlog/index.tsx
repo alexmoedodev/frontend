@@ -1,8 +1,16 @@
+// 📦 React
 import Image from "next/image";
+
+// Image
 import BlogRecent from "../../../../../../public/blog-recent.jpg";
 import BlogRecent2 from "../../../../../../public/blog-recent2.jpg";
+
+//🧩 Components
 import { Button } from "@/components/ui/Button/Button";
+
+// 🎨 Styles
 import styles from "./readBlog.module.css";
+
 export function ReadBlog() {
   return (
     <>
@@ -30,7 +38,8 @@ export function ReadBlog() {
             </div>
 
             <div className={styles.containerImage}>
-              <Image src={BlogRecent} alt="Imagem do produto" />
+              <Image src={BlogRecent} alt="Imagem do produto" 
+              quality={100}/>
             </div>
           </div>
 
@@ -54,7 +63,7 @@ export function ReadBlog() {
             </div>
 
             <div className={styles.containerImage}>
-              <Image src={BlogRecent2} alt="Imagem do produto" />
+              <Image src={BlogRecent2} alt="Imagem do produto" quality={100}/>
             </div>
           </div>
         </div>

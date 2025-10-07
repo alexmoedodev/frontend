@@ -1,9 +1,15 @@
+
+// 📦React
 import Image from "next/image";
 
+// Image
 import defaultPromotion1 from "../../../../../../public/defaultProduct1.png";
 import defaultPromotion2 from "../../../../../../public/defaultProduct2.png";
+
+// 🧩 Components
 import { Button } from "@/components/ui/Button/Button";
 
+// 🎨 Styles
 import styles from "./promotion.module.css";
 
 export function Promotion() {
@@ -34,6 +40,7 @@ export function Promotion() {
                 src={defaultPromotion1}
                 alt="Foto do produto da promoção"
                 className={styles.image}
+                quality={100}
               />
             </div>
           </div>
@@ -65,6 +72,7 @@ export function Promotion() {
                 src={defaultPromotion2}
                 alt="Foto do produto da promoção"
                 className={styles.image}
+                quality={100}
               />
             </div>
           </div>

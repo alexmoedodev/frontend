@@ -1,17 +1,15 @@
 "use client"
-
+// 📦 React
 import Image from "next/image";
+
+// 🎨 Styles
 import styles from "./topSale.module.css";
 
-
-
+// ⚙️ Services
 import { products } from "@/services/products";
-/* import { useState } from "react"; */
+
 
 export function TopSale() {
-
-  /* const [product, setProduct] = useState<ProductsProps[]>([]) */
-
   return (
     <>
       <section className={styles.container}>
@@ -28,7 +26,7 @@ export function TopSale() {
 
                 <div className={styles.products} key={index}>
                   <div className={styles.image__product}>
-                    <Image src={item.img} alt={item.name} width={200} height={200} quality={100} priority />
+                    <Image src={item.img} alt={item.name} width={200} height={200}/>
                   </div>
 
                   <div className={styles.details}>

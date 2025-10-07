@@ -1,7 +1,11 @@
+
+// Icons 
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaQuoteRight } from "react-icons/fa";
+
+// 🎨 Styles
 import styles from "./testimonials.module.css";
 
 export function Testimonials() {

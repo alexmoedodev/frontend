@@ -1,4 +1,7 @@
+// ⚙️ Services
 import { WhyChooseService } from "@/services/whyChoose";
+
+// 🎨 Styles
 import styles from "./whyChoose.module.css";
 
 export function WhyChoose() {
@@ -6,7 +9,6 @@ export function WhyChoose() {
     <>
       <section className={styles.container}>
         <div className={styles.content}>
-
 
           {WhyChooseService && WhyChooseService.map((item, index) => (
 

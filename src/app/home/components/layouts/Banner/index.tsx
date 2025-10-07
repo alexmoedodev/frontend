@@ -1,13 +1,15 @@
 "use client"
-
-
-import { Button } from "@/components/ui/Button/Button"
-import styles from "./banner.module.css"
+// 📦React
 import { useEffect, useState } from "react"
+
+// 🧩 Components
+import { Button } from "@/components/ui/Button/Button"
+
+// 🎨 Styles
+import styles from "./banner.module.css"
 
 
 export function Banner() {
-
  const [ timeLeft , setTimerLeft] = useState({
     days:"00",
     hours:"00",
