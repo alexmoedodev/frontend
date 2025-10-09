@@ -46,4 +46,5 @@ export const TITLE_FIELDS_USER = {
 
 export const OTHERS = {
   STATUS: `Ativo ou Inativo.`,
+  FILTER_STATUS: (name: string)=>  `Filtrar ${name}. Todos, ativos ou inativos.`
 }

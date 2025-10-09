@@ -1,4 +1,6 @@
 export const TITLE_BUTTON = {
+  NEW_O: (name: string) => `Novo ${name}`,
+  NEW_A: (name: string) => `Nova ${name}`,
   SAVE: (name: string) => `Salvar ${name}`,
   CANCEL: (name: string) => `Cancelar ${name}`,
   DELETE: (name: string) => `Excluir ${name}`,

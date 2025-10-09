@@ -4,12 +4,14 @@ import React, { AnchorHTMLAttributes } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import styles from "./buttonLink.module.css";
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
+import { IoMdAdd } from "react-icons/io"; 
+
 
 type ButtonLinkProps = {
   children: React.ReactNode;
   href: string;
   title: string;
-  variant: "danger";
+  variant: "danger" | "new"
   widthStyles?: "w-full" | "w-fit" | "w-sm" | "w-md" | "w-lg";
   heigthStyles?: "h-sm" | "h-md" | "h-lg";
   icon?: boolean;
@@ -28,6 +30,8 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const IconStyles = {
     danger: <FaArrowLeft />,
+    new: <IoMdAdd />,
+
   };
 
   return (
