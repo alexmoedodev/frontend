@@ -3,21 +3,29 @@ import Input from "@/components/ui/Input/Input";
 import { Select } from "@/components/ui/Select/select";
 import { TittleFieldsDocument } from "@/utils/formTitles";
 
+
+
 type DocumentFormProps = {
   data: {
-    documentType: "CNPJ" | "CPF";
+    documentType: "CNPJ" | "CPF"
     document: string;
-    ieORrg: string;
+    resgistrationStatus: string
+    companySize: string
+    rg: string;
     socialRasion: string;
     nameFantasy: string;
+
   };
 
   onChange: (newData: Partial<DocumentFormProps["data"]>) => void;
+  onBlurCnpj: () => Promise<void> | undefined
 };
 
-export function DocumentForm({ data, onChange }: DocumentFormProps) {
-  
+export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) {
+
   const typeCompany = data.documentType === "CNPJ";
+
+
 
   return (
     <>
@@ -47,31 +55,69 @@ export function DocumentForm({ data, onChange }: DocumentFormProps) {
               ? TittleFieldsDocument.DOCUMENT_CNPJ
               : TittleFieldsDocument.DOCUMENT_CPF
           }
-          widthStyles="w-fit"
           heigthStyles="h-md"
+          widthStyles="w-fit"
           required
+          minLength={typeCompany ? 14 : 11}
+          maxLength={typeCompany ? 14 : 11}
           value={data.document}
+          onBlur={typeCompany ? onBlurCnpj : undefined}
           name="document"
           onChange={(e) => onChange({ document: e.target.value })}
         />
 
-        <Input
-          label={typeCompany ? "I.E" : "RG"}
-          requiredField={typeCompany ? false : true}
-          title={
-            typeCompany
-              ? TittleFieldsDocument.STATE_REGISTRATION
-              : TittleFieldsDocument.DOCUMENT_RG
-          }
-          widthStyles="w-fit"
-          heigthStyles="h-md"
-          value={data.ieORrg}
-          name="ieORrg"
-          onChange={(e) => onChange({ ieORrg: e.target.value })}
-        />
+        {typeCompany && (
+          <>
+            <Input
+              label={"Situação cadastral"}
+              title={"Situação cadastral da empresa"}
+              widthStyles="w-fit"
+              heigthStyles="h-md"
+              readOnly
+              className="realonly"
+              value={data.resgistrationStatus}
+              name="resgistrationStatus"
+              onChange={(e) => onChange({ resgistrationStatus: e.target.value })}
+            />
+            <Input
+              label={"Porte"}
+              title={"Porte da empresa"}
+              widthStyles="w-fit"
+              heigthStyles="h-md"
+              readOnly
+              className="realonly"
+              value={data.companySize}
+              name="companySize"
+              onChange={(e) => onChange({ companySize: e.target.value })}
+            />
+
+          </>
+        )}
+
+
       </div>
 
       <div className="group__fields">
+
+        {!typeCompany && (
+
+          <Input
+            label={"RG"}
+            requiredField={!typeCompany}
+            title={
+              typeCompany
+                ? TittleFieldsDocument.STATE_REGISTRATION
+                : TittleFieldsDocument.DOCUMENT_RG
+            }
+            widthStyles="w-fit"
+            heigthStyles="h-md"
+            value={data.rg}
+            name="ieORrg"
+            onChange={(e) => onChange({ rg: e.target.value })}
+          />
+        )}
+
+
         <Input
           label={typeCompany ? "Razão Social" : "Nome Completo"}
           requiredField={true}
@@ -92,7 +138,6 @@ export function DocumentForm({ data, onChange }: DocumentFormProps) {
           title={TittleFieldsDocument.NAME_FANTASY}
           widthStyles="w-md"
           heigthStyles="h-md"
-          required
           value={data.nameFantasy}
           name="nameFantasy"
           onChange={(e) => onChange({ nameFantasy: e.target.value })}

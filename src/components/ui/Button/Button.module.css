@@ -113,13 +113,3 @@
 .h-lg {
     height: 40px;
 }
-
-
-
-@media (max-width:516px) {
-    .button {
-        height: 35px;
-        font-size: 0.8rem;
-    }
-
-}

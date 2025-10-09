@@ -7,12 +7,14 @@ type ButtonsFooterActionProps = {
   titleButtonSave: string;
   titleButtonLinkCancel: string;
   href: string;
+ 
 };
 
 export function ButtonsFooterActions({
   titleButtonSave,
   titleButtonLinkCancel,
   href,
+
 }: ButtonsFooterActionProps) {
   return (
     <>
@@ -23,6 +25,9 @@ export function ButtonsFooterActions({
             variant="success"
             icon={true}
             title={TITLE_BUTTON.SAVE(titleButtonSave)}
+            type="submit"
+       
+
           >
             Salvar
           </Button>

@@ -2,12 +2,18 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import AvatarUser from "../../../../../public/avatar.jpg"
-import styles from "./sidebar.module.css"
+// Icon
 import { FaHome } from "react-icons/fa"
 import { IoStorefrontSharp } from "react-icons/io5";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { TfiWorld } from "react-icons/tfi";
+import { FaUserAlt } from "react-icons/fa";
+
+// 🎨 Styles
+import styles from "./sidebar.module.css"
+
+// Image avatar ---> Remover image vem do banco
+import AvatarUser from "../../../../../public/avatar.jpg"
 
 
 type SidebarProps = {
@@ -53,6 +59,17 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                                 title="Navegar para home"
                             >
                                 <FaHome /> <span>Home</span>
+
+                            </Link>
+                        </li>
+                        <li className={styles.li}>
+                            <Link
+                                href="/usuarios"
+                                className={open ? "" : styles.li__close}
+                                title="Usuários"
+
+                            >
+                                <FaUserAlt /> <span>Usuários</span>
 
                             </Link>
                         </li>

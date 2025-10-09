@@ -14,9 +14,14 @@ type AddressFormProps = {
   };
 
   onChange: (newData: Partial<AddressFormProps["data"]>) => void;
+  onBlurSearchCep: ()=> void 
+
 };
 
-export function AddressForm({ data, onChange }: AddressFormProps) {
+export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormProps) {
+
+ 
+
   return (
     <>
       <div className="group__fields">
@@ -27,6 +32,9 @@ export function AddressForm({ data, onChange }: AddressFormProps) {
           heigthStyles="h-md"
           widthStyles="w-fit"
           required
+          minLength={8}
+          maxLength={8}
+          onBlur={onBlurSearchCep}
           value={data.cep}
           onChange={(e) => onChange({ cep: e.target.value })}
         />
@@ -56,7 +64,7 @@ export function AddressForm({ data, onChange }: AddressFormProps) {
           label="Complemento"
           title={TittleFieldsAddress.COMPLEMENT}
           heigthStyles="h-md"
-          widthStyles="w-fit"
+          widthStyles="w-md"
           value={data.complement}
           onChange={(e) => onChange({ complement: e.target.value })}
         />

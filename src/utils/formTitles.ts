@@ -33,6 +33,8 @@ export const TittleFieldsContact = {
 export const TITLE_FIELDS_USER = {
   USER_EMAIL: "Digite seu email",
   USER_PASSWORD: "Digite sua senha.",
+  USER_NAME: "Nome do usuário",
+  USER_TYPE: "Selecione o nivel de acesso.",
   LENGTH_NAME: "O nome deve conter no minimo 2 Caractéries.",
   LENGTH_PASSWORD: "A senha deve conter no minimo 6 digitos.",
   CONFIRM_PASSWORD: "Confirme sua senha.",
@@ -40,3 +42,8 @@ export const TITLE_FIELDS_USER = {
   REMMEMBER: "Lembrar-me minhas credenciais",
   REGISTER: "Registrar uma conta"
 };
+
+
+export const OTHERS = {
+  STATUS: `Ativo ou Inativo.`,
+}
