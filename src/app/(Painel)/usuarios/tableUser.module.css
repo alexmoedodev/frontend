@@ -1,7 +1,8 @@
-.content__header hr{
+.content__header hr {
     margin-top: 6px;
 }
-.search p{
+
+.search p {
     color: var(--color-gray);
     font-size: 0.8rem;
     margin: 4px 0px;
