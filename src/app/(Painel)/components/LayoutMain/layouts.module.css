@@ -29,7 +29,7 @@
   margin: 15px;
   padding: 16px;
   border-radius: 6px;
-  box-shadow: var(--color-box-shandow);
+  box-shadow: var(--color-box-shadow);
   border: 1px solid var(--color-border);
   
 }

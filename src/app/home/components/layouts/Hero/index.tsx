@@ -20,15 +20,10 @@ export function Hero() {
               <div className={styles.details}>
                 <span>New arrival..</span>
                 <h1>
-                  Elevate <br /> Your Home <br /> Aesthetics
+                  Elevate Your <br />Business To<br />The Next Leval
                 </h1>
                 <p>
-                  Transform every detail of your home into a statement of style
-                  and sophistication. By elevating your home aesthetics, you
-                  create spaces that reflect personality, comfort, and well-being.
-                  It’s more than just decorating—it’s about transforming ordinary
-                  rooms into inspiring places, where every element contributes to
-                  harmony and a true sense of belonging.
+                  Elevate your business to the next level by strengthening your online presence and brand identity. Gain visibility, credibility, and trust while standing out in the digital world. It’s more than just being online—it’s about building a lasting impression that connects, inspires, and drives your success.
                 </p>
                 <div className={styles.navegation}>
                   <Button

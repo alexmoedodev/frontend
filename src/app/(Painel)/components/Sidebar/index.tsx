@@ -1,5 +1,3 @@
-"use client";
-
 // 📦 React
 import Link from "next/link";
 import Image from "next/image";
@@ -11,23 +9,13 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { TfiWorld } from "react-icons/tfi";
 import { FaUserAlt } from "react-icons/fa";
 import { BiSolidEditAlt } from "react-icons/bi";
-import { SiGoogleforms } from "react-icons/si";
 
-// icons section
-import { PiNumberOneFill } from "react-icons/pi";
-import { PiNumberTwoFill } from "react-icons/pi";
-import { PiNumberThreeFill } from "react-icons/pi";
-import { PiNumberFourFill } from "react-icons/pi";
-import { PiNumberFiveFill } from "react-icons/pi";
-import { PiNumberSixFill } from "react-icons/pi";
-import { PiNumberSevenFill } from "react-icons/pi";
 
 // 🎨 Styles
 import styles from "./sidebar.module.css";
 
 // Image avatar ---> Remover image vem do banco
 import AvatarUser from "../../../../../public/avatar.jpg";
-import { useState } from "react";
 
 type SidebarProps = {
   open: boolean;
@@ -35,12 +23,6 @@ type SidebarProps = {
 };
 
 export function Sidebar({ open, toogleSidebar }: SidebarProps) {
-  const [showMenuWeb, setShowMenuWeb] = useState(false);
-
-  function handleMenuWeb() {
-    setShowMenuWeb(!showMenuWeb);
-  }
-
   return (
     <>
       <aside className={styles.sidebar}>
@@ -96,55 +78,16 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
               </Link>
             </li>
 
-            <li className={styles.li}>
-              {" "}
-              <button onClick={handleMenuWeb}>
-                <BiSolidEditAlt /> Editar site{" "}
-              </button>
-              {showMenuWeb && (
-                <>
-                  <ul>
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberOneFill /> Seção 1
-                      </Link>
-                    </li>
-
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberTwoFill /> Seção 2
-                      </Link>
-                    </li>
-
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberThreeFill /> Seção 3
-                      </Link>
-                    </li>
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberFourFill /> Seção 4
-                      </Link>
-                    </li>
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberFiveFill /> Seção 5
-                      </Link>
-                    </li>
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberSixFill /> Seção 6
-                      </Link>
-                    </li>
-                    <li className={`${styles.li} ${styles.li__menu__web}`}>
-                      <Link href={"/section-one"}>
-                        <PiNumberSevenFill /> Seção 7
-                      </Link>
-                    </li>
-                  </ul>
-                </>
-              )}
+            <li className={`${styles.li}`}>
+              <Link
+                href={"/editar-site"}
+                className={open ? "" : styles.li__close}
+                title="Editar site "
+              >
+                <BiSolidEditAlt /><span>Editar site</span>
+              </Link>
             </li>
+
             <li className={styles.li}>
               <Link
                 href="/"
@@ -156,11 +99,7 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                 <TfiWorld /> <span>Ver site</span>
               </Link>
             </li>
-            <li className={`${styles.li}`}>
-              <Link href={"/documentacao"}>
-                <SiGoogleforms /> Documentação
-              </Link>
-            </li>
+
           </ul>
         </nav>
       </aside>
