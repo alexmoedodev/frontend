@@ -1,6 +1,6 @@
 import Input from "@/components/ui/Input/Input";
 import { Select } from "@/components/ui/Select/select";
-import { TittleFieldsAddress } from "@/utils/formTitles";
+import { TITLE } from "@/utils/formTitles";
 
 type AddressFormProps = {
   data: {
@@ -28,7 +28,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Input
           label="Cep"
           requiredField={true}
-          title={TittleFieldsAddress.CEP}
+          title={TITLE.TITLE_FIELDS_ADDRESS.CEP}
           heigthStyles="h-md"
           widthStyles="w-fit"
           required
@@ -41,7 +41,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Input
           label="Endereço"
           requiredField={true}
-          title={TittleFieldsAddress.ADDRESS}
+          title={TITLE.TITLE_FIELDS_ADDRESS.ADDRESS}
           heigthStyles="h-md"
           widthStyles="w-lg"
           required
@@ -51,7 +51,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Input
           label="Nº"
           requiredField={true}
-          title={TittleFieldsAddress.NUMBER}
+          title={TITLE.TITLE_FIELDS_ADDRESS.NUMBER}
           heigthStyles="h-md"
           widthStyles="w-sm"
           required
@@ -62,7 +62,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
       <div className="group__fields">
         <Input
           label="Complemento"
-          title={TittleFieldsAddress.COMPLEMENT}
+          title={TITLE.TITLE_FIELDS_ADDRESS.COMPLEMENT}
           heigthStyles="h-md"
           widthStyles="w-md"
           value={data.complement}
@@ -71,7 +71,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Input
           label="Bairro"
           requiredField={true}
-          title={TittleFieldsAddress.NEIGHBORHOOD}
+          title={TITLE.TITLE_FIELDS_ADDRESS.NEIGHBORHOOD}
           heigthStyles="h-md"
           widthStyles="w-md"
           required
@@ -81,7 +81,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Input
           label="Cidade"
           requiredField={true}
-          title={TittleFieldsAddress.CITY}
+          title={TITLE.TITLE_FIELDS_ADDRESS.CITY}
           heigthStyles="h-md"
           widthStyles="w-fit"
           required
@@ -91,7 +91,7 @@ export function AddressForm({ data, onChange , onBlurSearchCep }: AddressFormPro
         <Select
           label="UF"
           requiredSelect={true}
-          title={TittleFieldsAddress.UF}
+          title={TITLE.TITLE_FIELDS_ADDRESS.UF}
           heigthStyles="h-md"
           widthStyles="w-fit"
           required

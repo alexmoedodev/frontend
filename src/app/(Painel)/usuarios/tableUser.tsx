@@ -9,7 +9,7 @@ import Input from "@/components/ui/Input/Input"
 
 // utils 
 import { TITLE_BUTTON } from "@/utils/buttonTitles"
-import { OTHERS } from "@/utils/formTitles"
+import { TITLE } from "@/utils/formTitles"
 
 // 📦 Styles
 import styles from "./tableUser.module.css"
@@ -53,7 +53,7 @@ export function TableUser() {
                                     label="Ativo"
                                     heigthStyles="h-md"
                                     widthStyles="w-fit"
-                                    title={OTHERS.FILTER_STATUS("usuários")}
+                                    title={TITLE.OTHERS.FILTER_STATUS("usuários")}
                                 >
                                     <option value="all">Todos</option>
                                     <option value="active">Ativo</option>

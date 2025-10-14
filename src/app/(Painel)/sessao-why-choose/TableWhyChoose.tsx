@@ -3,6 +3,7 @@
 // 📦 React
 import { redirect } from "next/navigation";
 
+// 🧩Componentes
 import { StatusTable } from "@/components/ui/StatusTable";
 import { RecordsCouts } from "../components/RecordsCount";
 import { Button } from "@/components/ui/Button/Button";
@@ -11,8 +12,10 @@ import { TitlePage } from "../components/TitlePage";
 import LayuotMain from "../components/LayoutMain";
 import Input from "@/components/ui/Input/Input";
 
-// ⚙ Service
+// ⚙ Services
 import { WhyChooseService } from "@/services/whyChoose";
+import { TITLE_BUTTON } from "@/utils/buttonTitles";
+import { TITLE } from "@/utils/formTitles";
 
 export function TableSectionWhyChooseComponents() {
   function handleCreateWhyChoose() {
@@ -22,16 +25,21 @@ export function TableSectionWhyChooseComponents() {
   return (
     <>
       <LayuotMain>
-        <TitlePage label={false} titlePage="Porque nos escolher" />
+        <TitlePage label={false} titlePage="Cards - porque nos escolher" />
 
-        <Button variant="new" icon={true} onClick={handleCreateWhyChoose}>
+        <Button
+          title={TITLE_BUTTON.NEW_O("card")}
+          variant="new"
+          icon={true}
+          onClick={handleCreateWhyChoose}
+        >
           Novo Card
         </Button>
 
         <div className="group__fields">
           <Input
             label="Pesquisar"
-            title=""
+            title={TITLE.OTHERS.SEARCH("card" , 2)}
             heigthStyles="h-md"
             widthStyles="w-md"
           />
@@ -39,11 +47,13 @@ export function TableSectionWhyChooseComponents() {
           <Select
             label="Ativo"
             requiredSelect={true}
-            title=""
+            title={TITLE.OTHERS.FILTER_STATUS("cards")}
             widthStyles="w-fit"
             heigthStyles="h-md"
           >
-            <option value="">Todos</option>
+            <option value="all">Todos</option>
+            <option value="1">Ativo</option>
+            <option value="0">Inativo</option>
           </Select>
         </div>
 
@@ -59,7 +69,7 @@ export function TableSectionWhyChooseComponents() {
               <th>#</th>
               <th>Icone</th>
               <th>Titulo</th>
-              <th>Paragráfo</th>
+              <th>Detalhes</th>
               <th>Ativo</th>
               <th>Data do cadastro</th>
             </tr>
@@ -71,19 +81,26 @@ export function TableSectionWhyChooseComponents() {
                 <tr key={index}>
                   <td data-label="Ações">
                     <span className="btns__actions__table">
-                      <Button variant="edit" icon={true} />
-                      <Button variant="delete" icon={true} />
+                      <Button
+                        title={TITLE_BUTTON.EDIT(`Card ${item.name}`)}
+                        variant="edit"
+                        icon={true}
+                      />
+                      <Button
+                        title={TITLE_BUTTON.DELETE(`Card ${item.name}`)}
+                        variant="delete"
+                        icon={true}
+                      />
                     </span>
                   </td>
                   <td data-label="Codigo">{item.code}</td>
                   <td data-label="Icone">{item.icon}</td>
                   <td data-label="Titulo">{item.name}</td>
-                  <td data-label="Paragráfo">{item.details}</td>
-                  <td data-label="Status">
-                    {" "}
+                  <td data-label="Detalhes">{item.details}</td>
+                  <td data-label="Ativo">
                     <StatusTable icon={item.status} />
                   </td>
-                  <td data-labe="Data do cadastro">{item.createdAt}</td>
+                  <td data-label="Data do cadastro">{item.createdAt}</td>
                 </tr>
               ))}
           </tbody>

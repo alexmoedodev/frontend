@@ -1,5 +1,5 @@
 import Input from "@/components/ui/Input/Input";
-import { TittleFieldsContact } from "@/utils/formTitles";
+import { TITLE } from "@/utils/formTitles";
 
 type ContactFormProps = {
   data: {
@@ -21,7 +21,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
       <div className="group__fields">
         <Input
           label="Telefone"
-          title={TittleFieldsContact.PHONE}
+          title={TITLE.TITLE_FIELDS_CONTACT.PHONE}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.phone}
@@ -29,7 +29,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
         />
         <Input
           label="Telefone 2"
-         title={TittleFieldsContact.PHONE}
+         title={TITLE.TITLE_FIELDS_CONTACT.PHONE}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.phone2}
@@ -37,7 +37,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
         />
         <Input
           label="E-mail"
-          title={TittleFieldsContact.EMAIL}
+          title={TITLE.TITLE_FIELDS_CONTACT.EMAIL}
           heigthStyles="h-md"
           widthStyles="w-md"
           value={data.email}
@@ -48,7 +48,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
       <div className="group__fields">
         <Input
           label="Site"
-          title={TittleFieldsContact.SITE}
+          title={TITLE.TITLE_FIELDS_CONTACT.SITE}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.site}
@@ -56,7 +56,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
         />
         <Input
           label="WhatsApp"
-          title={TittleFieldsContact.WHATSAPP}
+          title={TITLE.TITLE_FIELDS_CONTACT.WHATSAPP}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.whatsApp}
@@ -64,7 +64,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
         />
         <Input
           label="Instagran"
-          title={TittleFieldsContact.INSTAGRAN}
+          title={TITLE.TITLE_FIELDS_CONTACT.INSTAGRAN}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.instagran}
@@ -72,7 +72,7 @@ export function ContactForm({ data, onChange }: ContactFormProps) {
         />
         <Input
           label="Facebook"
-          title={TittleFieldsContact.FACEBOOK}
+          title={TITLE.TITLE_FIELDS_CONTACT.FACEBOOK}
           heigthStyles="h-md"
           widthStyles="w-fit"
           value={data.facebook}

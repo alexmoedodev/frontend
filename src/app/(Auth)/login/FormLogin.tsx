@@ -12,8 +12,10 @@ import Input from "@/components/ui/Input/Input";
 import styles from "../styles.module.css";
 import ImageLoginBg from "../../../../public/login.png";
 import LogoTipo from "../../../../public/Logotipo.png";
-import { TITLE_FIELDS_USER } from "@/utils/formTitles";
+
+// Utils
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
+import { TITLE } from "@/utils/formTitles";
 
 //📋 typagem
 type FormLoginProps = {
@@ -55,7 +57,7 @@ export function FormLogin() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.USER_EMAIL}
+                  title={TITLE.TITLE_FIELDS_USER.USER_NAME}
                   placeholder="email@email.com"
                   required
                   type="email"
@@ -68,7 +70,7 @@ export function FormLogin() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.USER_PASSWORD}
+                  title={TITLE.TITLE_FIELDS_USER.USER_PASSWORD}
                   placeholder="******"
                   required
                   type="password"
@@ -82,7 +84,7 @@ export function FormLogin() {
                   <div className={styles.remember}>
                     <input
                       type="checkbox"
-                      title={TITLE_FIELDS_USER.REMMEMBER}
+                      title={TITLE.TITLE_FIELDS_USER.REMMEMBER}
                       id="remember"
                       name="remember"
                       checked={user.remmember}
@@ -95,7 +97,7 @@ export function FormLogin() {
                     />
                     <label
                       htmlFor="remember"
-                      title={TITLE_FIELDS_USER.REMMEMBER}
+                      title={TITLE.TITLE_FIELDS_USER.REMMEMBER}
                     >
                       Lembrar-me
                     </label>
@@ -103,7 +105,7 @@ export function FormLogin() {
                   <div className={styles.forgot_password}>
                     <Link
                       href={"/redefinir-senha"}
-                      title={TITLE_FIELDS_USER.FORGOT_PASSWORD}
+                      title={TITLE.TITLE_FIELDS_USER.FORGOT_PASSWORD}
                     >
                       Esqueceu senha?
                     </Link>
@@ -123,7 +125,7 @@ export function FormLogin() {
                 <label>Não possui uma conta?</label>
                 <Link 
                 href={"/registrar-se"}
-                title={TITLE_FIELDS_USER.REGISTER}>
+                title={TITLE.TITLE_FIELDS_USER.REGISTER}>
                   Registrar-se
                 </Link>
               </div>

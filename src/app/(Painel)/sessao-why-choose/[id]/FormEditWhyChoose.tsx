@@ -9,6 +9,7 @@ import { TitlePage } from "../../components/TitlePage";
 import { Select } from "@/components/ui/Select/select";
 import LayuotMain from "../../components/LayoutMain";
 import Input from "@/components/ui/Input/Input";
+import { TITLE } from "@/utils/formTitles";
 
 export function FormEditSectionWhyChoose() {
   const { id } = useParams();
@@ -40,17 +41,22 @@ export function FormEditSectionWhyChoose() {
             <Input
               label="Titulo"
               requiredField={true}
-              title=""
+              title={TITLE.OTHERS.TITLE_MIN_MAX_LENGTH("Titulo" , 4 , 20)}
               heigthStyles="h-md"
               widthStyles="w-fit"
               maxLength={20}
+              minLength={4}
             />
           </div>
           <div className="text__area">
-            <label htmlFor="" className="required">
-              Paragráfo Max. 100 Caractéries.
+            <label className="required">
+              Detalhes Max. 100 Caractéries.
             </label>
-            <textarea name="" id=""></textarea>
+            <textarea
+            title={TITLE.OTHERS.TITLE_MIN_MAX_LENGTH("Detalhe" , 5 , 100) }
+             name=""
+              id=""
+              ></textarea>
           </div>
 
           <ButtonsFooterActions

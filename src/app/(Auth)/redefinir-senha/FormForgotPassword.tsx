@@ -12,7 +12,7 @@ import Input from "@/components/ui/Input/Input";
 import styles from "../styles.module.css";
 import ImageLoginBg from "../../../../public/newsletter.png";
 import LogoTipo from "../../../../public/Logotipo.png";
-import { TITLE_FIELDS_USER } from "@/utils/formTitles";
+import { TITLE } from "@/utils/formTitles";
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
 
 //📋 typagem
@@ -59,7 +59,7 @@ export function FormForgotPassword() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.USER_EMAIL}
+                  title={TITLE.TITLE_FIELDS_USER.USER_EMAIL}
                   placeholder="email@email.com"
                   required
                   type="email"
