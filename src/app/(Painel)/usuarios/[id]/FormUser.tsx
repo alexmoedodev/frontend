@@ -1,18 +1,19 @@
 "use client"
 
 //📦 React
+import { useParams } from "next/navigation"
 import { useState } from "react"
 
 // 🧩 Componentes
-import { ButtonsFooterActions } from "../components/ButtonsFooterAction"
+import { ButtonsFooterActions } from "../../components/ButtonsFooterAction"
 import { Select } from "@/components/ui/Select/select"
 import { Button } from "@/components/ui/Button/Button"
-import { TitlePage } from "../components/TitlePage"
-import LayuotMain from "../components/LayoutMain"
+import { TitlePage } from "../../components/TitlePage"
+import LayuotMain from "../../components/LayoutMain"
 import Input from "@/components/ui/Input/Input"
 
 // Utils
-import {TITLE  } from "@/utils/formTitles"
+import { TITLE } from "@/utils/formTitles"
 
 // Icons
 import { FaEye } from "react-icons/fa";
@@ -23,7 +24,11 @@ import styles from "./user.module.css"
 
 
 export function FormUser() {
-
+    // Receber parametro via URL 
+    const { id } = useParams()
+    const isCreating = id === "novo"
+    
+    // Exibir Senha e esconder senha
     const [showPassword, setShowPassoword] = useState(false)
 
     function handleShowPassword() {
@@ -36,7 +41,7 @@ export function FormUser() {
 
                 <div className={styles.container__user}>
                     <TitlePage
-                        titlePage="Novo usuário"
+                        titlePage={isCreating ? "Novo usuário" : "Editar usuário"}
                         label={true}
                     />
                     <div className={styles.content__user}>
@@ -113,7 +118,7 @@ export function FormUser() {
                             </div>
 
                             <ButtonsFooterActions
-                                titleButtonSave="usuário"
+                                titleButtonSave={isCreating ? "usuário" : "editação"}
                                 titleButtonLinkCancel="e voltar"
                                 href="/usuarios"
                             />

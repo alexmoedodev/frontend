@@ -1,6 +1,7 @@
 "use client";
 //📦 React
 import { useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,6 +18,9 @@ import LogoTipo from "../../../../public/Logotipo.png";
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
 import { TITLE } from "@/utils/formTitles";
 
+// services
+import { api } from "@/services/api";
+
 //📋 typagem
 type FormLoginProps = {
   email: string;
@@ -31,8 +35,35 @@ export function FormLogin() {
     remmember: false,
   });
 
+
+  const [showLinkRegister, setShowLinkRegister] = useState(true)
+  const [showLoading, setShowLoading] = useState(true)
+
+  useEffect(() => {
+    async function AlreadyUserRegistrad() {
+      const response = await api.get("/users")
+      try {
+        const data = response.data.length
+        if (data >= 1) {
+          setShowLinkRegister(false)
+        }
+        return
+
+      } catch (error) {
+        console.error("Erro ao listar usuários:", error)
+      } finally {
+        setShowLoading(false)
+      }
+
+    }
+    AlreadyUserRegistrad()
+
+  }, [])
+
   return (
     <>
+
+   
       <div className={styles.login__container}>
         <div className={styles.login__card}>
           <div className={styles.login__image__bg}>
@@ -50,7 +81,7 @@ export function FormLogin() {
                   src={LogoTipo}
                   alt="Logo tipo da empresa desenvolvedora do sistema"
                   priority
-                />
+                  />
                 <p>Preencha suas credenciais para realizar login.</p>
               </div>
               <div className={styles.input__form}>
@@ -79,7 +110,7 @@ export function FormLogin() {
                   onChange={(e) =>
                     setUser((prev) => ({ ...prev, password: e.target.value }))
                   }
-                />
+                  />
                 <div className={styles.remember__forgot_password}>
                   <div className={styles.remember}>
                     <input
@@ -94,7 +125,7 @@ export function FormLogin() {
                           remmember: e.target.checked,
                         }))
                       }
-                    />
+                      />
                     <label
                       htmlFor="remember"
                       title={TITLE.TITLE_FIELDS_USER.REMMEMBER}
@@ -106,7 +137,7 @@ export function FormLogin() {
                     <Link
                       href={"/redefinir-senha"}
                       title={TITLE.TITLE_FIELDS_USER.FORGOT_PASSWORD}
-                    >
+                      >
                       Esqueceu senha?
                     </Link>
                   </div>
@@ -121,18 +152,22 @@ export function FormLogin() {
                   Acessar
                 </Button>
               </div>
-              <div className={styles.footer__form}>
-                <label>Não possui uma conta?</label>
-                <Link 
-                href={"/registrar-se"}
-                title={TITLE.TITLE_FIELDS_USER.REGISTER}>
-                  Registrar-se
-                </Link>
-              </div>
+
+              {!showLoading && showLinkRegister && (
+                <div className={styles.footer__form}>
+                  <label>Não possui uma conta? </label>
+                  <Link
+                    href={"/registrar-se"}
+                    title={TITLE.TITLE_FIELDS_USER.REGISTER}>
+                    Registrar-se
+                  </Link>
+                </div>
+              )}
             </div>
           </form>
         </div>
       </div>
+ 
     </>
   );
 }

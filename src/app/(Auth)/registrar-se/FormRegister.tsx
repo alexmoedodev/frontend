@@ -8,26 +8,20 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button/Button";
 import Input from "@/components/ui/Input/Input";
 
-<<<<<<< HEAD
 // Utils
-import { TITLE_FIELDS_USER } from "@/utils/formTitles";
-=======
-//🎨 Styles
-import styles from "../styles.module.css";
-import ImageLoginBg from "../../../../public/complete-form.png";
-import LogoTipo from "../../../../public/Logotipo.png";
 import { TITLE } from "@/utils/formTitles";
->>>>>>> f8816b7c122ca2acaa0ad1cc5eb94fbe3a4a77b5
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
 
 //🎨 Styles
+import styles from "../styles.module.css";
 import ImageLoginBg from "../../../../public/complete-form.png";
 import LogoTipo from "../../../../public/Logotipo.png";
-import styles from "../styles.module.css";
+
 
 // Service
 import { registerUser, RegisterProps } from "../_action/RegisterUser";
 import { AlertMessage } from "@/components/ui/Alert/AlertMessage";
+
 
 //📋 typagem
 type FormLoginProps = {
@@ -38,6 +32,7 @@ type FormLoginProps = {
 };
 
 export function FormRegister() {
+  
   const [auth, formDataRegister] = useActionState(registerUser, {} as RegisterProps)
 
   const [user, setUser] = useState<FormLoginProps>({

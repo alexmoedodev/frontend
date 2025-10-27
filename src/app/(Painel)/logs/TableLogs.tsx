@@ -6,13 +6,14 @@ import { TitlePage } from "../components/TitlePage";
 import { Select } from "@/components/ui/Select/select";
 import { useEffect, useState } from "react";
 import { api } from "@/services/api";
+import { FormatedDate } from "@/utils/formatedDate";
 
 type logsProps = {
     id: number
     category: string
     action: string
     createdAt: string
-    user:{
+    user: {
         name: string
     }
 }
@@ -82,16 +83,7 @@ export default function TableLogs() {
                                     <td data-label={"Categoria"}>{log.category}</td>
                                     <td data-label={"Ações"}>{log.action}</td>
                                     <td data-label={"Usuário"}>{log.user?.name || "Nome não identificado"}</td>
-                                    <td data-label={"Data do Registro"}>{new Date(log.createdAt).toLocaleString("pt-BR", {
-                                        day: "2-digit",
-                                        month: "2-digit",
-                                        year: "numeric",
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                        second: "2-digit",
-                                        
-                                       
-                                    }).replace("," , " - ")}</td>
+                                    <td data-label={"Data do Registro"}>{FormatedDate(log.createdAt)}</td>
                                 </tr>
 
                             ))

@@ -1,6 +1,10 @@
+"use client"
+// 📦React
+import { redirect } from "next/navigation"
+
 
 // 🧩 Componentes
-import { ButtonLink } from "@/components/ui/ButtonLink/ButtonLink"
+import { StatusTable } from "@/components/ui/StatusTable"
 import { Button } from "@/components/ui/Button/Button"
 import { Select } from "@/components/ui/Select/select"
 import { TitlePage } from "../components/TitlePage"
@@ -11,15 +15,49 @@ import Input from "@/components/ui/Input/Input"
 import { TITLE_BUTTON } from "@/utils/buttonTitles"
 import { TITLE } from "@/utils/formTitles"
 
-// 📦 Styles
+// 🎨 Styles
 import styles from "./tableUser.module.css"
 
 // Services
-import { users } from "@/services/users"
-import { StatusTable } from "@/components/ui/StatusTable"
+/* import { users } from "@/services/users" */
+import { useEffect, useState } from "react"
+import { api } from "@/services/api"
+import { FormatedDate } from "@/utils/formatedDate"
+
+
+type UsersProps = {
+    id: string
+    code: number
+    name: string
+    email: string
+    status: boolean
+    createdAt: string
+}
 
 
 export function TableUser() {
+    const [users, setUsers] = useState<UsersProps[] | null>(null)
+
+    //Button create new user
+    function createNewUser() {
+        redirect("/usuarios/novo")
+    }
+
+    //List all User registred
+    useEffect(() => {
+        async function ListAllUserRegistred() {
+            const response = await api.get("/users")
+            try {
+                const data = response.data
+                setUsers(data)
+
+            } catch (error) {
+                console.error("Erro ao lista usuários:", error)
+            }
+        }
+        ListAllUserRegistred()
+    }, [])
+
     return (
         <>
             <LayuotMain>
@@ -31,14 +69,15 @@ export function TableUser() {
                     />
 
                     <div className={styles.content__header}>
-                        <ButtonLink
-                            href="/novo-usuario"
+                        <Button
                             variant="new"
                             icon={true}
-                            title={TITLE_BUTTON.NEW_O("usuário")}>
-                            Novo Usuário
+                            title={TITLE_BUTTON.NEW_O("usuário")}
+                            onClick={createNewUser}
 
-                        </ButtonLink>
+                        >
+                            Novo Usuário
+                        </Button>
 
                         <div className={styles.search}>
                             <div className="group__fields">
@@ -70,45 +109,46 @@ export function TableUser() {
                         <hr />
 
                     </div>
-                  <div className="table__wrapper">
+                    <div className="table__wrapper">
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ações</th>
-                                <th>#</th>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Ativo</th>
-                                <th>Data do Cadastro</th>
-                            </tr>
-                        </thead> 
-
-                        <tbody>
-                            {users && users.map((user, index) => (
-
-                                <tr key={index}>
-                                    <td 
-                                    data-label={"Ações"}
-                                    >
-                                        <span className="btns__actions__table">
-                                            <Button variant="edit" icon={true}/>
-                                            <Button variant="delete" icon={true} />
-                                        </span>
-                                    </td>
-                                    <td data-label={"#"}>{user.code}</td>
-                                    <td data-label={"Nome"}>{user.name}</td>
-                                    <td data-label={"Email"}>{user.email}</td>
-                                    <td data-label={"Ativo"}><StatusTable icon={user.status}/> </td>
-                                    <td data-label={"Data do Cadastro"}>2{user.createdAt}</td>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ações</th>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Ativo</th>
+                                    <th>Data do Cadastro</th>
                                 </tr>
+                            </thead>
 
-                            ))}
-                        </tbody>
-                    </table>
+                            <tbody>
+                                {users && (
+                                    users.map((user, index) => (
+
+                                        <tr key={index}>
+                                            <td
+                                                data-label={"Ações"}
+                                            >
+                                                <span className="btns__actions__table">
+                                                    <Button variant="edit" icon={true} />
+                                                    <Button variant="delete" icon={true} />
+                                                </span>
+                                            </td>
+                                            <td data-label={"#"}>{user.code}</td>
+                                            <td data-label={"Nome"}>{user.name}</td>
+                                            <td data-label={"Email"}>{user.email}</td>
+                                            <td data-label={"Ativo"}><StatusTable icon={user.status} /> </td>
+                                            <td data-label={"Data do Cadastro"}>{FormatedDate(user.createdAt)}</td>
+                                        </tr>
+
+                                    )))}
+                            </tbody>
+                        </table>
 
 
-                  </div>
+                    </div>
                 </div>
             </LayuotMain>
         </>
