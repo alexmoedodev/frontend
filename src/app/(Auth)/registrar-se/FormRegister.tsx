@@ -8,8 +8,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button/Button";
 import Input from "@/components/ui/Input/Input";
 
+<<<<<<< HEAD
 // Utils
 import { TITLE_FIELDS_USER } from "@/utils/formTitles";
+=======
+//🎨 Styles
+import styles from "../styles.module.css";
+import ImageLoginBg from "../../../../public/complete-form.png";
+import LogoTipo from "../../../../public/Logotipo.png";
+import { TITLE } from "@/utils/formTitles";
+>>>>>>> f8816b7c122ca2acaa0ad1cc5eb94fbe3a4a77b5
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
 
 //🎨 Styles
@@ -68,7 +76,7 @@ export function FormRegister() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.LENGTH_NAME}
+                  title={TITLE.TITLE_FIELDS_USER.LENGTH_NAME}
                   placeholder="Nome do usuário"
                   required
                   type="text"
@@ -85,7 +93,7 @@ export function FormRegister() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.USER_EMAIL}
+                  title={TITLE.TITLE_FIELDS_USER.USER_EMAIL}
                   placeholder="email@email.com"
                   required
                   type="email"
@@ -99,7 +107,7 @@ export function FormRegister() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.LENGTH_PASSWORD}
+                  title={TITLE.TITLE_FIELDS_USER.LENGTH_PASSWORD}
                   placeholder="******"
                   required
                   type="password"
@@ -113,7 +121,7 @@ export function FormRegister() {
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
-                  title={TITLE_FIELDS_USER.CONFIRM_PASSWORD}
+                  title={TITLE.TITLE_FIELDS_USER.CONFIRM_PASSWORD}
                   placeholder="******"
                   required
                   type="password"

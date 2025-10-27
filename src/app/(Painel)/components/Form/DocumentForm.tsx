@@ -1,7 +1,7 @@
 
 import Input from "@/components/ui/Input/Input";
 import { Select } from "@/components/ui/Select/select";
-import { TittleFieldsDocument } from "@/utils/formTitles";
+import { TITLE } from "@/utils/formTitles";
 
 
 
@@ -33,7 +33,7 @@ export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) 
         <Select
           label="Tipo"
           requiredSelect={true}
-          title={TittleFieldsDocument.TYPE_COMPANY}
+          title={TITLE.TITLE_FIELDS_COMPANY.TYPE_COMPANY}
           heigthStyles="h-md"
           widthStyles="w-fit"
           required
@@ -52,8 +52,8 @@ export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) 
           requiredField={true}
           title={
             typeCompany
-              ? TittleFieldsDocument.DOCUMENT_CNPJ
-              : TittleFieldsDocument.DOCUMENT_CPF
+              ? TITLE.TITLE_FIELDS_COMPANY.DOCUMENT_CNPJ
+              : TITLE.TITLE_FIELDS_COMPANY.DOCUMENT_CPF
           }
           heigthStyles="h-md"
           widthStyles="w-fit"
@@ -106,8 +106,8 @@ export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) 
             requiredField={!typeCompany}
             title={
               typeCompany
-                ? TittleFieldsDocument.STATE_REGISTRATION
-                : TittleFieldsDocument.DOCUMENT_RG
+                ? TITLE.TITLE_FIELDS_COMPANY.STATE_REGISTRATION
+                : TITLE.TITLE_FIELDS_COMPANY.DOCUMENT_RG
             }
             widthStyles="w-fit"
             heigthStyles="h-md"
@@ -123,8 +123,8 @@ export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) 
           requiredField={true}
           title={
             typeCompany
-              ? TittleFieldsDocument.SOCIAL_RASION
-              : TittleFieldsDocument.NAME_USUÁRIO
+              ? TITLE.TITLE_FIELDS_COMPANY.SOCIAL_RASION
+              : TITLE.TITLE_FIELDS_COMPANY.NAME_USUÁRIO
           }
           widthStyles="w-md"
           heigthStyles="h-md"
@@ -135,7 +135,7 @@ export function DocumentForm({ data, onChange, onBlurCnpj }: DocumentFormProps) 
         />
         <Input
           label="Nome Fantasia"
-          title={TittleFieldsDocument.NAME_FANTASY}
+          title={TITLE.TITLE_FIELDS_COMPANY.NAME_FANTASY}
           widthStyles="w-md"
           heigthStyles="h-md"
           value={data.nameFantasy}

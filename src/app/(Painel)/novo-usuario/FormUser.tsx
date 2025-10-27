@@ -12,7 +12,7 @@ import LayuotMain from "../components/LayoutMain"
 import Input from "@/components/ui/Input/Input"
 
 // Utils
-import { OTHERS, TITLE_FIELDS_USER } from "@/utils/formTitles"
+import {TITLE  } from "@/utils/formTitles"
 
 // Icons
 import { FaEye } from "react-icons/fa";
@@ -47,7 +47,7 @@ export function FormUser() {
                                 <Input
                                     label="Nome"
                                     requiredField={true}
-                                    title={TITLE_FIELDS_USER.USER_NAME}
+                                    title={TITLE.TITLE_FIELDS_USER.USER_NAME}
                                     type="text"
                                     minLength={2}
                                     widthStyles="w-fit"
@@ -56,7 +56,7 @@ export function FormUser() {
                                 <Input
                                     label="E-mail"
                                     requiredField={true}
-                                    title={TITLE_FIELDS_USER.USER_EMAIL}
+                                    title={TITLE.TITLE_FIELDS_USER.USER_EMAIL}
                                     type="email"
                                     widthStyles="w-md"
                                     heigthStyles="h-md"
@@ -64,7 +64,7 @@ export function FormUser() {
                                 <Input
                                     label="Senha"
                                     requiredField={true}
-                                    title={TITLE_FIELDS_USER.LENGTH_PASSWORD}
+                                    title={TITLE.TITLE_FIELDS_USER.LENGTH_PASSWORD}
                                     type={showPassword ? "text" : "password"}
                                     widthStyles="w-fit"
                                     heigthStyles="h-md"
@@ -72,7 +72,7 @@ export function FormUser() {
                                 <Input
                                     label="Confirma-senha"
                                     requiredField={true}
-                                    title={TITLE_FIELDS_USER.CONFIRM_PASSWORD}
+                                    title={TITLE.TITLE_FIELDS_USER.CONFIRM_PASSWORD}
                                     type={showPassword ? "text" : "password"}
                                     widthStyles="w-fit"
                                     heigthStyles="h-md"
@@ -91,7 +91,7 @@ export function FormUser() {
                                 <Select
                                     label="Ativo"
                                     requiredSelect={true}
-                                    title={OTHERS.STATUS}
+                                    title={TITLE.OTHERS.STATUS}
                                     heigthStyles="h-md"
                                     widthStyles="w-fit"
                                 >
@@ -103,7 +103,7 @@ export function FormUser() {
                                 <Select
                                     label="Tipo"
                                     requiredSelect={true}
-                                    title={TITLE_FIELDS_USER.USER_TYPE}
+                                    title={TITLE.TITLE_FIELDS_USER.USER_TYPE}
                                     heigthStyles="h-md"
                                     widthStyles="w-fit"
                                 >

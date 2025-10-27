@@ -9,7 +9,7 @@ import Input from "@/components/ui/Input/Input"
 
 // utils 
 import { TITLE_BUTTON } from "@/utils/buttonTitles"
-import { OTHERS } from "@/utils/formTitles"
+import { TITLE } from "@/utils/formTitles"
 
 // 📦 Styles
 import styles from "./tableUser.module.css"
@@ -53,7 +53,7 @@ export function TableUser() {
                                     label="Ativo"
                                     heigthStyles="h-md"
                                     widthStyles="w-fit"
-                                    title={OTHERS.FILTER_STATUS("usuários")}
+                                    title={TITLE.OTHERS.FILTER_STATUS("usuários")}
                                 >
                                     <option value="all">Todos</option>
                                     <option value="active">Ativo</option>
@@ -70,6 +70,7 @@ export function TableUser() {
                         <hr />
 
                     </div>
+                  <div className="table__wrapper">
 
                     <table>
                         <thead>
@@ -87,23 +88,19 @@ export function TableUser() {
                             {users && users.map((user, index) => (
 
                                 <tr key={index}>
-                                    <td className="btns__actions__table">
-                                        <Button
-                                            variant="edit"
-                                            icon={true}
-                                        />
-                                        <Button
-                                            variant="delete"
-                                            icon={true}
-                                        />
-
-
+                                    <td 
+                                    data-label={"Ações"}
+                                    >
+                                        <span className="btns__actions__table">
+                                            <Button variant="edit" icon={true}/>
+                                            <Button variant="delete" icon={true} />
+                                        </span>
                                     </td>
-                                    <td>{user.code}</td>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
-                                    <td><StatusTable icon={user.status}/> </td>
-                                    <td>2{user.createdAt}</td>
+                                    <td data-label={"#"}>{user.code}</td>
+                                    <td data-label={"Nome"}>{user.name}</td>
+                                    <td data-label={"Email"}>{user.email}</td>
+                                    <td data-label={"Ativo"}><StatusTable icon={user.status}/> </td>
+                                    <td data-label={"Data do Cadastro"}>2{user.createdAt}</td>
                                 </tr>
 
                             ))}
@@ -111,6 +108,7 @@ export function TableUser() {
                     </table>
 
 
+                  </div>
                 </div>
             </LayuotMain>
         </>

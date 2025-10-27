@@ -71,18 +71,18 @@ export default function TableLogs() {
                             <th>Categoria</th>
                             <th>Ações</th>
                             <th>Usuário</th>
-                            <th>Data do Cadastro</th>
+                            <th>Data do Registros</th>
                         </tr>
                     </thead>
                     <tbody>
                         {logs && (
                             logs.map((log, index) => (
                                 <tr key={index}>
-                                    <td aria-label="">{log.id}</td>
-                                    <td aria-label="">{log.category}</td>
-                                    <td aria-label="">{log.action}</td>
-                                    <td aria-label="">{log.user?.name || "Nome não identificado"}</td>
-                                    <td aria-label="">{new Date(log.createdAt).toLocaleString("pt-BR", {
+                                    <td data-label={"#"}>{log.id}</td>
+                                    <td data-label={"Categoria"}>{log.category}</td>
+                                    <td data-label={"Ações"}>{log.action}</td>
+                                    <td data-label={"Usuário"}>{log.user?.name || "Nome não identificado"}</td>
+                                    <td data-label={"Data do Registro"}>{new Date(log.createdAt).toLocaleString("pt-BR", {
                                         day: "2-digit",
                                         month: "2-digit",
                                         year: "numeric",
