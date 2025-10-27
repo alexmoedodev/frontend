@@ -8,12 +8,8 @@ import { IoStorefrontSharp } from "react-icons/io5";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { TfiWorld } from "react-icons/tfi";
 import { FaUserAlt } from "react-icons/fa";
-<<<<<<< HEAD
 import { HiArrowPath } from "react-icons/hi2";
-=======
 import { BiSolidEditAlt } from "react-icons/bi";
-
->>>>>>> f8816b7c122ca2acaa0ad1cc5eb94fbe3a4a77b5
 
 // 🎨 Styles
 import styles from "./sidebar.module.css";
@@ -44,7 +40,7 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
             <button
               onClick={toogleSidebar}
               aria-label="Fechar e Abrir sidebar"
-              title={open ? "Fechar Menu Lateral" : "Abrir Menu Lareal"}
+              title={open ? "Fechar Menu Lateral" : "Abrir Menu Lateral"}
               className={open ? "" : styles.toogle__open}
             >
               <HiOutlineMenuAlt1 />
@@ -63,6 +59,7 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                 <FaHome /> <span>Home</span>
               </Link>
             </li>
+
             <li className={styles.li}>
               <Link
                 href="/usuarios"
@@ -72,6 +69,7 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                 <FaUserAlt /> <span>Usuários</span>
               </Link>
             </li>
+
             <li className={styles.li}>
               <Link
                 href="/empresa"
@@ -82,13 +80,13 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
               </Link>
             </li>
 
-            <li className={`${styles.li}`}>
+            <li className={styles.li}>
               <Link
-                href={"/editar-site"}
+                href="/editar-site"
                 className={open ? "" : styles.li__close}
-                title="Editar site "
+                title="Editar site"
               >
-                <BiSolidEditAlt /><span>Editar site</span>
+                <BiSolidEditAlt /> <span>Editar site</span>
               </Link>
             </li>
 
@@ -96,7 +94,7 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
               <Link
                 href="/"
                 className={open ? "" : styles.li__close}
-                title="Abri o site em uma nova aba"
+                title="Abrir o site em uma nova aba"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -104,76 +102,18 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
               </Link>
             </li>
 
-<<<<<<< HEAD
-
-                <nav className={styles.nav}>
-                    <ul className={styles.ul}>
-                        <li className={styles.li}>
-                            <Link
-                                href="/dashboard"
-                                className={open ? "" : styles.li__close}
-                                title="Navegar para home"
-                            >
-                                <FaHome /> <span>Home</span>
-
-                            </Link>
-                        </li>
-                        <li className={styles.li}>
-                            <Link
-                                href="/usuarios"
-                                className={open ? "" : styles.li__close}
-                                title="Usuários"
-
-                            >
-                                <FaUserAlt /> <span>Usuários</span>
-
-                            </Link>
-                        </li>
-                        <li className={styles.li}>
-                            <Link
-                                href="/empresa"
-                                className={open ? "" : styles.li__close}
-                                title="Dados da empresa"
-                            >
-                                <IoStorefrontSharp /> <span>Empresa</span>
-
-                            </Link>
-                        </li>
-                        <li className={styles.li}>
-                            <Link
-                                href="/"
-                                className={open ? "" : styles.li__close}
-                                title="Abri o site em uma nova aba"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <TfiWorld /> <span>Ver site</span>
-
-                            </Link>
-                        </li>
-                        <li className={styles.li}>
-                            <Link
-                                href="/logs"
-                                className={open ? "" : styles.li__close}
-                                title="Registros do sistema."
-                                
-                            >
-                                <HiArrowPath /> <span>Logs</span>
-
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-
-        </>
-    )
-}
-=======
+            <li className={styles.li}>
+              <Link
+                href="/logs"
+                className={open ? "" : styles.li__close}
+                title="Registros do sistema"
+              >
+                <HiArrowPath /> <span>Logs</span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </aside>
     </>
   );
 }
->>>>>>> f8816b7c122ca2acaa0ad1cc5eb94fbe3a4a77b5
