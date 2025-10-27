@@ -21,7 +21,10 @@
   --color-violet-secondary: #5a50e6;
   --color-success: #009689;
   --color-success-secondary: #005f5a;
+  --color-success-bg: #e8fffd;
   --color-red: red;
+  --color-bg-error: #ffbbbb;
+  --color-bg-success: green;
   --color-border: #cfcfcf61;
   --color-box-shandow: 0 0 0.9rem #bcbcbc;
   --color-bg-body: #f6f6f6;
@@ -97,4 +100,22 @@ tbody td.btns__actions__table {
 }
 .realonly {
   background-color: var(--color-realonly);
+}
+
+.alert {
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.alert .success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+.alert .error {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
 }

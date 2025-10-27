@@ -1,6 +1,6 @@
 "use client";
 //📦 React
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,27 +8,35 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button/Button";
 import Input from "@/components/ui/Input/Input";
 
-//🎨 Styles
-import styles from "../styles.module.css";
-import ImageLoginBg from "../../../../public/complete-form.png";
-import LogoTipo from "../../../../public/Logotipo.png";
+// Utils
 import { TITLE_FIELDS_USER } from "@/utils/formTitles";
 import { TITLE_BUTTON } from "@/utils/buttonTitles";
+
+//🎨 Styles
+import ImageLoginBg from "../../../../public/complete-form.png";
+import LogoTipo from "../../../../public/Logotipo.png";
+import styles from "../styles.module.css";
+
+// Service
+import { registerUser, RegisterProps } from "../_action/RegisterUser";
+import { AlertMessage } from "@/components/ui/Alert/AlertMessage";
 
 //📋 typagem
 type FormLoginProps = {
   name: string;
   email: string;
   password: string;
-  confirmPassoword: string;
+  confirmPassword: string;
 };
 
 export function FormRegister() {
+  const [auth, formDataRegister] = useActionState(registerUser, {} as RegisterProps)
+
   const [user, setUser] = useState<FormLoginProps>({
     name: "",
     email: "",
     password: "",
-    confirmPassoword: "",
+    confirmPassword: "",
   });
 
   return (
@@ -43,7 +51,7 @@ export function FormRegister() {
             />
           </div>
 
-          <form action="" className={styles.form__login}>
+          <form action={formDataRegister} className={styles.form__login}>
             <div className={styles.content__form}>
               <div className={styles.title__form}>
                 <Image
@@ -54,6 +62,9 @@ export function FormRegister() {
                 <p>Preencha todos os campos para registrar-se.</p>
               </div>
               <div className={styles.input__form}>
+
+
+
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
@@ -66,7 +77,11 @@ export function FormRegister() {
                   onChange={(e) =>
                     setUser((prev) => ({ ...prev, name: e.target.value }))
                   }
+                  error={auth?.fieldsErrors?.name}
                 />
+
+
+
                 <Input
                   widthStyles="w-full"
                   heigthStyles="h-md"
@@ -79,6 +94,7 @@ export function FormRegister() {
                   onChange={(e) =>
                     setUser((prev) => ({ ...prev, email: e.target.value }))
                   }
+                  error={auth?.fieldsErrors?.email}
                 />
                 <Input
                   widthStyles="w-full"
@@ -92,6 +108,7 @@ export function FormRegister() {
                   onChange={(e) =>
                     setUser((prev) => ({ ...prev, password: e.target.value }))
                   }
+                  error={auth?.fieldsErrors?.password}
                 />
                 <Input
                   widthStyles="w-full"
@@ -100,15 +117,30 @@ export function FormRegister() {
                   placeholder="******"
                   required
                   type="password"
-                  name="confirmPassoword"
-                  value={user.confirmPassoword}
+                  name="confirmPassword"
+                  value={user.confirmPassword}
                   onChange={(e) =>
                     setUser((prev) => ({
                       ...prev,
-                      confirmPassoword: e.target.value,
+                      confirmPassword: e.target.value,
                     }))
                   }
+                  error={auth?.fieldsErrors?.confirmPassword}
                 />
+
+                {auth?.success && (
+
+                  <AlertMessage variant="success" widthStyles="w-full">
+                    {auth.success}
+                  </AlertMessage>
+                )}
+
+                {auth?.error && (
+                  <AlertMessage variant="error" widthStyles="w-full">
+                    {auth.error}
+                  </AlertMessage>
+
+                )}
 
                 <Button
                   type="submit"

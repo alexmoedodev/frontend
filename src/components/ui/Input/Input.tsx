@@ -7,6 +7,7 @@ type InputPrpos = {
   heigthStyles: "h-sm" | "h-md" | "h-lg";
   label?: string;
   requiredField?: boolean;
+  error?: string
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, InputPrpos>(
@@ -17,6 +18,7 @@ const Input = forwardRef<HTMLInputElement, InputPrpos>(
       heigthStyles = "h-md",
       label,
       requiredField = false,
+      error,
       className,
       ...props
     },
@@ -26,8 +28,8 @@ const Input = forwardRef<HTMLInputElement, InputPrpos>(
       <>
         <div className={styles.field__label}>
           {label && (
-            <label 
-            className={`${styles.label} 
+            <label
+              className={`${styles.label} 
             ${requiredField ? "required" : ""}`}>
               {label}
             </label>
@@ -37,11 +39,17 @@ const Input = forwardRef<HTMLInputElement, InputPrpos>(
             className={`${styles.input} 
             ${styles[widthStyles]}
              ${styles[heigthStyles]}
+             ${error ? styles.error : ""}
               ${className ?? ""}`}
             ref={ref}
             title={title}
+            aria-invalid={!!error}
             {...props}
           />
+          {error && (
+            <p className={styles.errorMessage}>{error}</p>
+
+          )}
         </div>
       </>
     );

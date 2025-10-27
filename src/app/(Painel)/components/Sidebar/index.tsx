@@ -8,6 +8,7 @@ import { IoStorefrontSharp } from "react-icons/io5";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { TfiWorld } from "react-icons/tfi";
 import { FaUserAlt } from "react-icons/fa";
+import { HiArrowPath } from "react-icons/hi2";
 
 // 🎨 Styles
 import styles from "./sidebar.module.css"
@@ -92,6 +93,17 @@ export function Sidebar({ open, toogleSidebar }: SidebarProps) {
                                 rel="noopener noreferrer"
                             >
                                 <TfiWorld /> <span>Ver site</span>
+
+                            </Link>
+                        </li>
+                        <li className={styles.li}>
+                            <Link
+                                href="/logs"
+                                className={open ? "" : styles.li__close}
+                                title="Registros do sistema."
+                                
+                            >
+                                <HiArrowPath /> <span>Logs</span>
 
                             </Link>
                         </li>
